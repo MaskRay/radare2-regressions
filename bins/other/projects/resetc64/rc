@@ -1,0 +1,13 @@
+# r2 rdb project file
+# flags
+# eval
+"e file.path = ../bins/other/projects/reset64.bin"
+"e prj.name = resetc64"
+om 3 0xbffe 0x5 0x0
+# sections
+# meta
+CCu base64:cmVzZXRzIHRoZSBDNjQ= @ 0x0000c000
+# types
+# macros
+# seek
+s 0x0000c000
