@@ -77,8 +77,13 @@ CMDS64=CmUgYXNtLmFyY2g9eDg2CmUgYXNtLmJpdHM9NjQKd3ggYjgwMTAwMDAwMDQ4MzljYTdmCnBpI
 RUN
 NAME=pij 3
 FILE=malloc://512
-EXPECT64=W3sib2Zmc2V0IjowLCJ2YWwiOjEsImVzaWwiOiIxLGVheCw9LDB4ZmZmZmZmZmYscmF4LCY9IiwicmVmcHRyIjpmYWxzZSwiZmNuX2FkZHIiOjAsImZjbl9sYXN0IjowLCJzaXplIjo1LCJvcGNvZGUiOiJtb3YgZWF4LCAxIiwiZGlzYXNtIjoibW92IGVheCwgMSIsImJ5dGVzIjoiYjgwMTAwMDAwMCIsImZhbWlseSI6ImNwdSIsInR5cGUiOiJtb3YiLCJ0eXBlX251bSI6OSwidHlwZTJfbnVtIjowfSx7Im9mZnNldCI6NSwiZXNpbCI6InJjeCxyZHgsPT0sJHosemYsPSwkYjY0LGNmLD0sJHAscGYsPSwkcyxzZiw9LCRvLG9mLD0iLCJyZWZwdHIiOmZhbHNlLCJmY25fYWRkciI6MCwiZmNuX2xhc3QiOjAsInNpemUiOjMsIm9wY29kZSI6ImNtcCByZHgsIHJjeCIsImRpc2FzbSI6ImNtcCByZHgsIHJjeCIsImJ5dGVzIjoiNDgzOWNhIiwiZmFtaWx5IjoiY3B1IiwidHlwZSI6ImNtcCIsInR5cGVfbnVtIjoxNSwidHlwZTJfbnVtIjowfSx7Im9mZnNldCI6OCwiZXNpbCI6InNmLG9mLCEsXix6ZiwhLCYsP3ssMTAscmlwLD0sfSIsInJlZnB0ciI6ZmFsc2UsImZjbl9hZGRyIjowLCJmY25fbGFzdCI6MCwic2l6ZSI6Miwib3Bjb2RlIjoiamcgMHhhIiwiZGlzYXNtIjoiamcgMHhhIiwiYnl0ZXMiOiI3ZjAwIiwiZmFtaWx5IjoiY3B1IiwidHlwZSI6ImNqbXAiLCJ0eXBlX251bSI6MjE0NzQ4MzY0OSwidHlwZTJfbnVtIjowLCJqdW1wIjoxMCwiZmFpbCI6MTB9XQo=
-CMDS64=CmUgYXNtLmFyY2g9eDg2CmUgYXNtLmJpdHM9NjQKd3ggYjgwMTAwMDAwMDQ4MzljYTdmCnBpaiAzCgo=
+CMDS=<<EXPECT
+e asm.arch=x86
+e asm.bits=64
+wx b8010000004839ca7f
+pij 3
+EXPECT=<<RUN
+[{"offset":0,"val":1,"esil":"1,eax,=,0xffffffff,rax,&=","refptr":false,"fcn_addr":0,"fcn_last":0,"size":5,"opcode":"mov eax, 1","disasm":"mov eax, 1","bytes":"b801000000","family":"cpu","type":"mov","type_num":9,"type2_num":0},{"offset":5,"esil":"rcx,rdx,==,$z,zf,=,$b64,cf,=,$p,pf,=,$s,sf,=,$o,of,=,POP","refptr":false,"fcn_addr":0,"fcn_last":0,"size":3,"opcode":"cmp rdx, rcx","disasm":"cmp rdx, rcx","bytes":"4839ca","family":"cpu","type":"cmp","type_num":15,"type2_num":0},{"offset":8,"esil":"sf,of,!,^,zf,!,&,?{,10,rip,=,}","refptr":false,"fcn_addr":0,"fcn_last":0,"size":2,"opcode":"jg 0xa","disasm":"jg 0xa","bytes":"7f00","family":"cpu","type":"cjmp","type_num":2147483649,"type2_num":0,"jump":10,"fail":10}]
 RUN
 NAME=pi 6
 FILE=malloc://512
@@ -132,8 +137,13 @@ CMDS64=CmUgYXNtLmFyY2g9eDg2CmUgYXNtLmJpdHM9NjQKd3ggYjgwMTAwMDAwMDQ4MzljYTdmCnBpI
 RUN
 NAME=pij 3 (2)
 FILE=malloc://512
-EXPECT64=W3sib2Zmc2V0IjowLCJ2YWwiOjEsImVzaWwiOiIxLGVheCw9LDB4ZmZmZmZmZmYscmF4LCY9IiwicmVmcHRyIjpmYWxzZSwiZmNuX2FkZHIiOjAsImZjbl9sYXN0IjowLCJzaXplIjo1LCJvcGNvZGUiOiJtb3YgZWF4LCAxIiwiZGlzYXNtIjoibW92IGVheCwgMSIsImJ5dGVzIjoiYjgwMTAwMDAwMCIsImZhbWlseSI6ImNwdSIsInR5cGUiOiJtb3YiLCJ0eXBlX251bSI6OSwidHlwZTJfbnVtIjowfSx7Im9mZnNldCI6NSwiZXNpbCI6InJjeCxyZHgsPT0sJHosemYsPSwkYjY0LGNmLD0sJHAscGYsPSwkcyxzZiw9LCRvLG9mLD0iLCJyZWZwdHIiOmZhbHNlLCJmY25fYWRkciI6MCwiZmNuX2xhc3QiOjAsInNpemUiOjMsIm9wY29kZSI6ImNtcCByZHgsIHJjeCIsImRpc2FzbSI6ImNtcCByZHgsIHJjeCIsImJ5dGVzIjoiNDgzOWNhIiwiZmFtaWx5IjoiY3B1IiwidHlwZSI6ImNtcCIsInR5cGVfbnVtIjoxNSwidHlwZTJfbnVtIjowfSx7Im9mZnNldCI6OCwiZXNpbCI6InNmLG9mLCEsXix6ZiwhLCYsP3ssMTAscmlwLD0sfSIsInJlZnB0ciI6ZmFsc2UsImZjbl9hZGRyIjowLCJmY25fbGFzdCI6MCwic2l6ZSI6Miwib3Bjb2RlIjoiamcgMHhhIiwiZGlzYXNtIjoiamcgMHhhIiwiYnl0ZXMiOiI3ZjAwIiwiZmFtaWx5IjoiY3B1IiwidHlwZSI6ImNqbXAiLCJ0eXBlX251bSI6MjE0NzQ4MzY0OSwidHlwZTJfbnVtIjowLCJqdW1wIjoxMCwiZmFpbCI6MTB9XQo=
-CMDS64=CmUgYXNtLmFyY2g9eDg2CmUgYXNtLmJpdHM9NjQKd3ggYjgwMTAwMDAwMDQ4MzljYTdmCnBpaiAzCgo=
+CMDS=<<EXPECT
+e asm.arch=x86
+e asm.bits=64
+wx b8010000004839ca7f
+pij 3
+EXPECT=<<RUN
+[{"offset":0,"val":1,"esil":"1,eax,=,0xffffffff,rax,&=","refptr":false,"fcn_addr":0,"fcn_last":0,"size":5,"opcode":"mov eax, 1","disasm":"mov eax, 1","bytes":"b801000000","family":"cpu","type":"mov","type_num":9,"type2_num":0},{"offset":5,"esil":"rcx,rdx,==,$z,zf,=,$b64,cf,=,$p,pf,=,$s,sf,=,$o,of,=,POP","refptr":false,"fcn_addr":0,"fcn_last":0,"size":3,"opcode":"cmp rdx, rcx","disasm":"cmp rdx, rcx","bytes":"4839ca","family":"cpu","type":"cmp","type_num":15,"type2_num":0},{"offset":8,"esil":"sf,of,!,^,zf,!,&,?{,10,rip,=,}","refptr":false,"fcn_addr":0,"fcn_last":0,"size":2,"opcode":"jg 0xa","disasm":"jg 0xa","bytes":"7f00","family":"cpu","type":"cjmp","type_num":2147483649,"type2_num":0,"jump":10,"fail":10}]
 RUN
 NAME=pi 6
 FILE=malloc://512
@@ -147,8 +157,62 @@ CMDS64=CmUgYXNtLmFyY2g9eDg2CmUgYXNtLmJpdHM9NjQKd3ggYjgwMTAwMDAwMDQ4MzljYTdmMDAKc
 RUN
 NAME=pij -3 @ 3
 FILE=malloc://512
-EXPECT64=WwogIHsKICAgICJvZmZzZXQiOiAzLAogICAgInZhbCI6IDIsCiAgICAiZXNpbCI6ICJhbCxyYXgsKz1bMV0sJG8sb2YsPSwkcyxzZiw9LCR6LHpmLD0sJGM3LGNmLD0sJHAscGYsPSIsCiAgICAicmVmcHRyIjogZmFsc2UsCiAgICAiZmNuX2FkZHIiOiAwLAogICAgImZjbl9sYXN0IjogMCwKICAgICJzaXplIjogMiwKICAgICJvcGNvZGUiOiAiYWRkIGJ5dGUgW3JheF0sIGFsIiwKICAgICJkaXNhc20iOiAiYWRkIGJ5dGUgW3JheF0sIGFsIiwKICAgICJieXRlcyI6ICIwMDAwIiwKICAgICJmYW1pbHkiOiAiY3B1IiwKICAgICJ0eXBlIjogImFkZCIsCiAgICAidHlwZV9udW0iOiAxNywKICAgICJ0eXBlMl9udW0iOiAwCiAgfSwKICB7CiAgICAib2Zmc2V0IjogNSwKICAgICJlc2lsIjogInJjeCxyZHgsPT0sJHosemYsPSwkYjY0LGNmLD0sJHAscGYsPSwkcyxzZiw9LCRvLG9mLD0iLAogICAgInJlZnB0ciI6IGZhbHNlLAogICAgImZjbl9hZGRyIjogMCwKICAgICJmY25fbGFzdCI6IDAsCiAgICAic2l6ZSI6IDMsCiAgICAib3Bjb2RlIjogImNtcCByZHgsIHJjeCIsCiAgICAiZGlzYXNtIjogImNtcCByZHgsIHJjeCIsCiAgICAiYnl0ZXMiOiAiNDgzOWNhIiwKICAgICJmYW1pbHkiOiAiY3B1IiwKICAgICJ0eXBlIjogImNtcCIsCiAgICAidHlwZV9udW0iOiAxNSwKICAgICJ0eXBlMl9udW0iOiAwCiAgfSwKICB7CiAgICAib2Zmc2V0IjogOCwKICAgICJlc2lsIjogInNmLG9mLCEsXix6ZiwhLCYsP3ssMTAscmlwLD0sfSIsCiAgICAicmVmcHRyIjogZmFsc2UsCiAgICAiZmNuX2FkZHIiOiAwLAogICAgImZjbl9sYXN0IjogMCwKICAgICJzaXplIjogMiwKICAgICJvcGNvZGUiOiAiamcgMHhhIiwKICAgICJkaXNhc20iOiAiamcgMHhhIiwKICAgICJieXRlcyI6ICI3ZjAwIiwKICAgICJmYW1pbHkiOiAiY3B1IiwKICAgICJ0eXBlIjogImNqbXAiLAogICAgInR5cGVfbnVtIjogMjE0NzQ4MzY0OSwKICAgICJ0eXBlMl9udW0iOiAwLAogICAgImp1bXAiOiAxMCwKICAgICJmYWlsIjogMTAKICB9Cl0K
-CMDS64=CmUgYXNtLmFyY2g9eDg2CmUgYXNtLmJpdHM9NjQKd3ggYjgwMTAwMDAwMDQ4MzljYTdmMDAKcGlqIC0zIEAgMTB+e30KCg==
+CMDS=<<EXPECT
+e asm.arch=x86
+e asm.bits=64
+wx b8010000004839ca7f00
+pij -3 @ 10~{}
+EXPECT=<<RUN
+[
+  {
+    "offset": 3,
+    "val": 2,
+    "esil": "al,rax,+=[1],$o,of,=,$s,sf,=,$z,zf,=,$c7,cf,=,$p,pf,=",
+    "refptr": false,
+    "fcn_addr": 0,
+    "fcn_last": 0,
+    "size": 2,
+    "opcode": "add byte [rax], al",
+    "disasm": "add byte [rax], al",
+    "bytes": "0000",
+    "family": "cpu",
+    "type": "add",
+    "type_num": 17,
+    "type2_num": 0
+  },
+  {
+    "offset": 5,
+    "esil": "rcx,rdx,==,$z,zf,=,$b64,cf,=,$p,pf,=,$s,sf,=,$o,of,=,POP",
+    "refptr": false,
+    "fcn_addr": 0,
+    "fcn_last": 0,
+    "size": 3,
+    "opcode": "cmp rdx, rcx",
+    "disasm": "cmp rdx, rcx",
+    "bytes": "4839ca",
+    "family": "cpu",
+    "type": "cmp",
+    "type_num": 15,
+    "type2_num": 0
+  },
+  {
+    "offset": 8,
+    "esil": "sf,of,!,^,zf,!,&,?{,10,rip,=,}",
+    "refptr": false,
+    "fcn_addr": 0,
+    "fcn_last": 0,
+    "size": 2,
+    "opcode": "jg 0xa",
+    "disasm": "jg 0xa",
+    "bytes": "7f00",
+    "family": "cpu",
+    "type": "cjmp",
+    "type_num": 2147483649,
+    "type2_num": 0,
+    "jump": 10,
+    "fail": 10
+  }
+]
 RUN
 NAME=pi -10
 FILE=malloc://1024
